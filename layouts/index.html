@@ -1,17 +1,12 @@
 {{ partial "header.html" . }}
 
-<div class="header">
-  <h1>{{ .Title }}</h1>
-  <h2>{{ .Site.Params.subtitle }}</h2>
-</div>
+{{ range last 1 ( .Paginate (where .Data.Pages "Type" "wprowadzenie")).Pages  }}
+  <div class="header">
+   <h1>{{ .Title }}</h1>
+   <h2>{{ .Description }}</h2>
+  </div>
 
-<div class="content">
-  {{ range ( .Paginate (where .Data.Pages "Type" "post")).Pages }}
-    {{ .Render "summary"}}
-  {{ end }}
+  {{ .Render "content"}}
 
-  {{ partial "pagination.html" . }}
-
-</div>
-
+{{ end }}
 {{ partial "footer.html" . }}
