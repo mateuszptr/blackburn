@@ -91,3 +91,12 @@ i {
 blockquote {
   color: #999;
 }
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-inline-start: 20px;
+  margin-block-end: 20px;
+}
