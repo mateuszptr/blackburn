@@ -1,9 +1,9 @@
 {{ partial "header.html" . }}
 
-{{ range last 1 ( .Paginate (where .Data.Pages "Type" "wprowadzenie")).Pages  }}
+{{ with .Site.GetPage "/wprowadzenie/wstep.md" }}
   <div class="header">
    <h1>{{ .Title }}</h1>
-   <h2>{{ .Description }}</h2>
+   <h2>{{ .Params.subtitle }}</h2>
   </div>
 
   {{ .Render "content"}}
