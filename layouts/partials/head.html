@@ -51,6 +51,7 @@
   {{ end }}
 
   {{ partial "favicon.html" . }}
+  {{ partial "og.html" . }}
 
   {{ range .Site.Params.custom_css }}
     {{ if findRE "https?://" . }}
